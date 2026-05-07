@@ -12,6 +12,16 @@ let n = years * 12;
 
 let maturityAmount = P * (((Math.pow(1+r,n))-1)/r)*(1+r);
 
+let investedAmount = P * n;
+
+let estimatedReturns = maturityAmount - investedAmount;
+
+document.getElementById("invested").innerHTML =
+"₹ " + Math.round(investedAmount);
+
+document.getElementById("returns").innerHTML =
+"₹ " + Math.round(estimatedReturns);
+
 document.getElementById("result").innerHTML =
 "₹ " + Math.round(maturityAmount);
 
