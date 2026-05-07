@@ -2,33 +2,79 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart SIP Calculator India</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<div class="container">
-  <h1>Smart SIP Calculator</h1>
+<div class="topbar">
+  <h2>💰 Smart Finance Tools</h2>
 
-  <input type="number" id="amount" placeholder="Monthly Investment">
-
-  <input type="number" id="rate" placeholder="Annual Interest Rate">
-
-  <input type="number" id="years" placeholder="Years">
-
-  <button onclick="calculateSIP()">Calculate</button>
-
-  <div class="results">
-  <p>Total Invested</p>
-  <h3 id="invested">₹0</h3>
-
-  <p>Estimated Returns</p>
-  <h3 id="returns">₹0</h3>
-
-  <p>Total Value</p>
-  <h2 id="result">₹0</h2>
-  </div>
+  <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
 </div>
+
+<div class="container">
+
+  <div class="tabs">
+    <button onclick="showCalculator('sip')">SIP</button>
+    <button onclick="showCalculator('emi')">EMI</button>
+  </div>
+
+  <!-- SIP CALCULATOR -->
+  <div id="sipBox">
+    <h1>Smart SIP Calculator</h1>
+
+    <input type="number" id="amount" placeholder="Monthly Investment">
+
+    <input type="number" id="rate" placeholder="Annual Interest Rate">
+
+    <input type="number" id="years" placeholder="Years">
+
+    <button onclick="calculateSIP()">Calculate SIP</button>
+
+    <div class="results">
+      <p>Total Invested</p>
+      <h3 id="invested">₹0</h3>
+
+      <p>Estimated Returns</p>
+      <h3 id="returns">₹0</h3>
+
+      <p>Total Value</p>
+      <h2 id="result">₹0</h2>
+    </div>
+
+    <canvas id="sipChart"></canvas>
+  </div>
+
+
+  <!-- EMI CALCULATOR -->
+  <div id="emiBox" style="display:none;">
+
+    <h1>EMI Calculator</h1>
+
+    <input type="number" id="loan" placeholder="Loan Amount">
+
+    <input type="number" id="emiRate" placeholder="Interest Rate">
+
+    <input type="number" id="emiYears" placeholder="Loan Years">
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <div class="results">
+      <p>Monthly EMI</p>
+      <h2 id="emiResult">₹0</h2>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Smart Finance Tools | Made by Ritu</p>
+</footer>
 
 <script src="script.js"></script>
 
