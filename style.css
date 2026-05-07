@@ -50,3 +50,18 @@ button:hover{
   margin-top:20px;
   color:#222;
 }
+.results{
+  margin-top:20px;
+  text-align:left;
+}
+
+.results p{
+  margin:8px 0 0;
+  color:#666;
+}
+
+.results h2,
+.results h3{
+  margin:5px 0 15px;
+  color:#00b09b;
+}
