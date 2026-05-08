@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart SIP Calculator India</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <h2>💰 Smart Finance Tools</h2>
+
+  <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</div>
+
+<div class="container">
+
+  <div class="tabs">
+  <button onclick="showCalculator('sip')">SIP</button>
+
+  <button onclick="showCalculator('emi')">EMI</button>
+
+  <button onclick="showCalculator('fd')">FD</button>
+
+  <button onclick="showCalculator('lumpsum')">Lumpsum</button>
+
+  <button onclick="showCalculator('retirement')">
+    Retirement
+  </button>
+</div>
+
+  <!-- SIP CALCULATOR -->
+  <div id="sipBox">
+    <h1>Smart SIP Calculator</h1>
+
+    <input type="number" id="amount" placeholder="Monthly Investment">
+
+    <input type="number" id="rate" placeholder="Annual Interest Rate">
+
+    <input type="number" id="years" placeholder="Years">
+
+    <button onclick="calculateSIP()">Calculate SIP</button>
+
+    <div class="results">
+      <p>Total Invested</p>
+      <h3 id="invested">₹0</h3>
+
+      <p>Estimated Returns</p>
+      <h3 id="returns">₹0</h3>
+
+      <p>Total Value</p>
+      <h2 id="result">₹0</h2>
+    </div>
+
+    <canvas id="sipChart"></canvas>
+  </div>
+
+
+  <!-- EMI CALCULATOR -->
+  <div id="emiBox" style="display:none;">
+
+    <h1>EMI Calculator</h1>
+
+    <input type="number" id="loan" placeholder="Loan Amount">
+
+    <input type="number" id="emiRate" placeholder="Interest Rate">
+
+    <input type="number" id="emiYears" placeholder="Loan Years">
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <div class="results">
+      <p>Monthly EMI</p>
+      <h2 id="emiResult">₹0</h2>
+    </div>
+  </div>
+
+<!-- FD CALCULATOR -->
+
+<div id="fdBox" style="display:none;">
+
+<h1>FD Calculator</h1>
+
+<input type="number" id="fdAmount"
+placeholder="Deposit Amount">
+
+<input type="number" id="fdRate"
+placeholder="Interest Rate">
+
+<input type="number" id="fdYears"
+placeholder="Years">
+
+<button onclick="calculateFD()">
+Calculate FD
+</button>
+
+<div class="results">
+
+<p>Maturity Amount</p>
+
+<h2 id="fdResult">₹0</h2>
+
+</div>
+
+</div>
+
+<!-- LUMPSUM CALCULATOR -->
+
+<div id="lumpsumBox" style="display:none;">
+
+<h1>Lumpsum Calculator</h1>
+
+<input type="number" id="lumpAmount"
+placeholder="Investment Amount">
+
+<input type="number" id="lumpRate"
+placeholder="Interest Rate">
+
+<input type="number" id="lumpYears"
+placeholder="Years">
+
+<button onclick="calculateLumpsum()">
+Calculate
+</button>
+
+<div class="results">
+
+<p>Total Value</p>
+
+<h2 id="lumpResult">₹0</h2>
+
+</div>
+
+</div>
+
+<!-- RETIREMENT CALCULATOR -->
+
+<div id="retirementBox" style="display:none;">
+
+<h1>Retirement Calculator</h1>
+
+<input type="number" id="retireMonthly"
+placeholder="Monthly Investment">
+
+<input type="number" id="retireRate"
+placeholder="Interest Rate">
+
+<input type="number" id="retireYears"
+placeholder="Years Until Retirement">
+
+<button onclick="calculateRetirement()">
+Calculate
+</button>
+
+<div class="results">
+
+<p>Retirement Corpus</p>
+
+<h2 id="retireResult">₹0</h2>
+
+</div>
+
+</div>
+
+</div>
+<footer>
+  <p>© 2026 Smart Finance Tools | Made by Ritu</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
